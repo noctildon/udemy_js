@@ -1,0 +1,21 @@
+目錄結構
+    node_modules : 此目錄下安裝的nodejs模組
+    public : 要放上瀏覽器上跑的檔案
+    package.json : 有關此目錄的資訊
+    package-lock.json : 一般不會去更動
+    src : 放開發中的程式, 裡面的檔案經編譯後的檔案會到public裡
+
+
+指令
+    在package.json裡的scripts,可建立新的commands,然後可以用npm run [指令名稱]來執行
+    npm install 會自動安裝package.json裡面的dependencies
+    babel一般轉換用指令 : babel input.js --out-file output.js --presets env
+    此為有考慮到目錄結構 : babel src/index.js --out-file public/scripts/bundle.js --presets env
+    加上--watch以後可即時編譯
+    webpack可以把數個互相import的js檔輸出成一個js(bundle.js),並壓縮
+    webpack.config.js裡面存放webpack相關的code
+    webpack --watch 可以即時編譯index.js及其匯入的模組的變化, 可用npm run build 來監聽
+    babel可以將js轉換成可以適應各種瀏覽器的js
+    用npm install webpack-dev-server安裝webpack-dev-server, 它的功能是同時有live server和webpack自動編譯的效果
+    --mode development 表示要以development mode執行(速度較快)
+    npm install babel-plugin-transform-object-rest-spread 安裝transform-object-rest-spread這個plugin
