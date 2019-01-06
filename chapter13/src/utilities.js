@@ -6,7 +6,7 @@ const name = 'Allen'
 const square = (x) => x * x
 // export default square // export default只能有一個
 
-// 另一個方法import
+// 另一個方法export
 export {
     add,
     name,
